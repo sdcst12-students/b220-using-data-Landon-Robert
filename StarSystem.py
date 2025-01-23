@@ -78,5 +78,5 @@ pop = random.randint(2,12) - 2
 gov = random.randint(2,12) - 7 + pop
 LL = random.randint(2,12) - 7 + gov
 TL = random.randint(1,6) + DMs
-stats = {"Star Port: ": SP, "Naval Base: ": NB, "Scout Base: ": SB, "Gas Giant: ": GG, "Name: ": name, "Size": size, "Atmosphere": atmos}
+stats = {"Star Port": SP, "Naval Base": NB, "Scout Base": SB, "Gas Giant": GG, "Name": name, "Size": size, "Atmosphere": atmos}
 print(stats)
