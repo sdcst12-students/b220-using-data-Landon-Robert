@@ -2,7 +2,6 @@ import random
 class starsystem:
 
     def spaceport(self):
-        DMs = 0
         SPr = random.randint(2,12)
         if SPr <= 4:
             self.SP = "A"
@@ -71,6 +70,7 @@ class starsystem:
         return atmos
     
     def DM(self):
+        DMs = 0
         if self.SP == "A":
             DMs = DMs + 6
         elif self.SP == "B":
@@ -91,13 +91,25 @@ class starsystem:
             DMs = DMs + 1
         else:
             pass
+        
+        return DMs
+    
+    def hydrographics(self):
+        HG = random.randint(2,12) - 7
+
+    def population(self):
+        pop = random.randint(2,12) - 2
+
+    def govLevel(self):
+        gov = random.randint(2,12) - 7 + pop
+
+    def lawLevel(self):
+        LL = random.randint(2,12) - 7 + gov
+
+    def techLevel(self):
+        TL = random.randint(1,6) + self.DM()
 
 
-HG = random.randint(2,12) - 7
-pop = random.randint(2,12) - 2
-gov = random.randint(2,12) - 7 + pop
-LL = random.randint(2,12) - 7 + gov
-TL = random.randint(1,6) + DMs
 stats = {"Star Port": SP, "Naval Base": NB, "Scout Base": SB, "Gas Giant": GG, "Name": name, "Size": size, "Atmosphere": atmos}
 print(stats)
 
