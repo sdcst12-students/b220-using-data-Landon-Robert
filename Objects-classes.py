@@ -1,6 +1,5 @@
 import random
 class starsystem:
-
     def spaceport(self):
         SPr = random.randint(2,12)
         if SPr <= 4:
@@ -26,7 +25,7 @@ class starsystem:
             else:
                 NB = "N/A"  
 
-    def scountBase(self):
+    def scoutBase(self):
         if self.SP == "D":
             SB = random.randint(2,12)
         elif self.SP == "C":
@@ -66,7 +65,7 @@ class starsystem:
         if self.size() == 0:
             atmos = 0
         else:
-            atmos = random.randint(2,12) - 7 + size
+            atmos = random.randint(2,12) - 7 + self.size()
         return atmos
     
     def DM(self):
@@ -95,21 +94,21 @@ class starsystem:
         return DMs
     
     def hydrographics(self):
-        HG = random.randint(2,12) - 7
-
+        return random.randint(2,12) - 7
+    
     def population(self):
-        pop = random.randint(2,12) - 2
-
+        return random.randint(2,12) - 2
+    
     def govLevel(self):
-        gov = random.randint(2,12) - 7 + pop
+        return random.randint(2,12) - 7 + self.population()
 
     def lawLevel(self):
-        LL = random.randint(2,12) - 7 + gov
+        return random.randint(2,12) - 7 + self.govLevel()
 
     def techLevel(self):
-        TL = random.randint(1,6) + self.DM()
+        return random.randint(1,6) + self.DM()
 
-
-stats = {"Star Port": SP, "Naval Base": NB, "Scout Base": SB, "Gas Giant": GG, "Name": name, "Size": size, "Atmosphere": atmos}
+SS = starsystem()
+stats = {"Star Port": SS.spaceport(), "Naval Base": SS.navalBase(), "Scout Base": SS.scoutBase(), "Gas Giant": SS.gasGiant(), "Name": SS.name(), "Size": SS.size(), "Atmosphere": SS.atmos(), "Hydrographics": SS.hydrographics(), "Population": SS.population(), "Government Level": SS.govLevel(), "Law Level": SS.lawLevel(), "Tech Level": SS.techLevel}
 print(stats)
 
