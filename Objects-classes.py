@@ -86,7 +86,7 @@ class starsystem:
         else:
             pass
 
-        if (0 <= self.atmos <= 3) or (10 <= self.atmos <= 14):
+        if 0 <= self.atmos() <= 3 or 10 <= self.atmos() <= 14:
             DMs = DMs + 1
         else:
             pass
@@ -109,6 +109,6 @@ class starsystem:
         return random.randint(1,6) + self.DM()
 
 SS = starsystem()
-stats = {"Star Port": SS.spaceport(), "Naval Base": SS.navalBase(), "Scout Base": SS.scoutBase(), "Gas Giant": SS.gasGiant(), "Name": SS.name(), "Size": SS.size(), "Atmosphere": SS.atmos(), "Hydrographics": SS.hydrographics(), "Population": SS.population(), "Government Level": SS.govLevel(), "Law Level": SS.lawLevel(), "Tech Level": SS.techLevel}
+stats = {"Star Port": SS.spaceport(), "Naval Base": SS.navalBase(), "Scout Base": SS.scoutBase(), "Gas Giant": SS.gasGiant(), "Name": SS.name(), "Size": SS.size(), "Atmosphere": SS.atmos(), "Hydrographics": SS.hydrographics(), "Population": SS.population(), "Government Level": SS.govLevel(), "Law Level": SS.lawLevel(), "Tech Level": SS.techLevel()}
 print(stats)
 
