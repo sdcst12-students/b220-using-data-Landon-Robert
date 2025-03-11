@@ -1,7 +1,7 @@
 import random
 class starsystem:
     def spaceport(self):
-        SPr = random.randint(2,12)
+        SPr = random.randint(1,6) + random.randint(1,6)
         if SPr <= 4:
             self.SP = "A"
         elif SPr <= 6:
@@ -19,7 +19,7 @@ class starsystem:
         if self.SP == "C" or self.SP == "D" or self.SP == "E" or self.SP == "X":
             NB = "N/A"
         else:
-            NB = random.randint(2,12)
+            NB = random.randint(1,6) + random.randint(1,6)
             if NB >= 8:
                 NB = "Yes"
             else:
@@ -27,13 +27,13 @@ class starsystem:
 
     def scoutBase(self):
         if self.SP == "D":
-            SB = random.randint(2,12)
+            SB = random.randint(1,6) + random.randint(1,6)
         elif self.SP == "C":
-            SB = random.randint(2,12) - 1
+            SB = random.randint(1,6) + random.randint(1,6) - 1
         elif self.SP == "B":
-            SB = random.randint(2,12) - 2
+            SB = random.randint(1,6) + random.randint(1,6) - 2
         elif self.SP == "A":
-            SB = random.randint(2,12) - 3
+            SB = random.randint(1,6) + random.randint(1,6) - 3
         else:
             SB = "N/A"
         if SB == "N/A":
@@ -45,7 +45,7 @@ class starsystem:
         return SB
     
     def gasGiant(self):
-        GGr = random.randint(2,12)
+        GGr = random.randint(1,6) + random.randint(1,6)
         if GGr <= 9:
             GG = "Yes"
         else:
@@ -58,14 +58,14 @@ class starsystem:
         return name
     
     def size(self):
-        size = random.randint(2,12) - 2
+        size = random.randint(1,6) + random.randint(1,6) - 2
         return size
     
     def atmos(self):
         if self.size() == 0:
             atmos = 0
         else:
-            atmos = random.randint(2,12) - 7 + self.size()
+            atmos = random.randint(1,6) + random.randint(1,6) - 7 + self.size()
         return atmos
     
     def DM(self):
@@ -94,16 +94,16 @@ class starsystem:
         return DMs
     
     def hydrographics(self):
-        return random.randint(2,12) - 7
+        return random.randint(1,6) + random.randint(1,6) - 7
     
     def population(self):
-        return random.randint(2,12) - 2
+        return random.randint(1,6) + random.randint(1,6) - 2
     
     def govLevel(self):
-        return random.randint(2,12) - 7 + self.population()
+        return random.randint(1,6) + random.randint(1,6) - 7 + self.population()
 
     def lawLevel(self):
-        return random.randint(2,12) - 7 + self.govLevel()
+        return random.randint(1,6) + random.randint(1,6) - 7 + self.govLevel()
 
     def techLevel(self):
         return random.randint(1,6) + self.DM()
