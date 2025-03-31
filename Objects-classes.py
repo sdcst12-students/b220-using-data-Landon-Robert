@@ -13,7 +13,7 @@ class starsystem:
         elif SPr <= 11:
             self.SP = "E"
         else:
-            self.SP = "X"   
+            self.SP = "X"
 
     def navalBase(self):
         if self.SP == "C" or self.SP == "D" or self.SP == "E" or self.SP == "X":
@@ -94,10 +94,10 @@ class starsystem:
         return DMs
     
     def hydrographics(self):
-        return random.randint(1,6) + random.randint(1,6) - 7
+        return (random.randint(1,6) + random.randint(1,6)) - 7
     
     def population(self):
-        return random.randint(1,6) + random.randint(1,6) - 2
+        return (random.randint(1,6) + random.randint(1,6)) - 2
     
     def govLevel(self):
         return random.randint(1,6) + random.randint(1,6) - 7 + self.population()
